@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center" style="background-color:aquamarine;color:black">
+    <h1 class="display-4">Jurassic World</h1>
+    <p> Have Fun <a href="https://docs.microsoft.com/aspnet/core"></a></p>
+
+</div>
+@if (User.IsInRole("employee"))
+{
+    <section>
+        <h1>Welcome, employee!</h1>
+    </section>
+}
+else if (User.IsInRole("Department"))
+{
+    <section>
+        <h1>Welcome, Department!</h1>
+    </section>
+}
+else if (User.IsInRole("DeptHead"))
+{
+    <section>
+        <h1>Welcome, DeptHead!</h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1>Welcome!</h1>
+    </section>
+}
